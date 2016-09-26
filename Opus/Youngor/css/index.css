@@ -1,0 +1,102 @@
+
+.wrapper{
+    min-width: 320px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.hd-table{
+    display: table;
+    width: 100%;
+    background-color:#f0f0f0;
+    height: 30px;
+    margin-top: 20px;
+}
+.cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cell-left ,.cell-right{
+    /*width: 100px;*/
+    /*background-color: yellow;*/
+    /*border: 1px solid red;*/
+
+}
+.cell-left{
+
+}
+
+.cell-center{
+    width: 100%;
+}
+
+.cell-left img ,.cell-right img {
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+}
+
+
+input{
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    height: 26px;
+    width: 98%;
+    /*padding-left: 20px;*/
+    background: url("../img/icon_search.png")no-repeat 98% center #ffffff ;
+    background-size: 20px;
+    text-indent: 6px;
+    margin: 0 5px;
+}
+
+
+/*商品区*/
+.goods-list li{
+    float: left;
+    width: 25%;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.goods-list li a{
+    display: block;
+    text-decoration: none;
+}
+
+.goods-list li a:link,.goods-list li a:visited{
+     color: #999;
+ }
+
+.goods-list li a:hover,.goods-list li a:active{
+    color: #FF0000;
+}
+
+.goods-list li img{
+    display: block;
+    width: 100%;
+}
+
+.goods-list li p{
+    font-size: 0.8rem;
+}
+
+.goods-list li span{
+    font-size: 1rem;
+    color: red;
+}
+
+.goods-list li span:before{
+    content:"￥";
+    /*font-family: "Microsoft YaHei", SimSun, '\5b8b\4f53', sans-serif;*/
+}
+
+@media screen and (max-width:600px){
+    .goods-list li{
+        width: 50%;
+    }
+    html{
+        font-size: 12px;
+    }
+}

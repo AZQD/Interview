@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>选择所在坐标</title>
+	<meta content="telephone=no" name="format-detection">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="on" http-equiv="cleartype">
+	<!--build:css inline  -->
+	<link rel="stylesheet" type="text/css" href="assets/css/1reset.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/2layout.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/common.css" />
+	<!-- /build -->
+	<style>
+		.cc_main {
+			width: 100%;
+			height: 100%;
+		}
+
+		.cc_input {
+			width: 97%;
+			margin: 10px auto;
+			background: #fff;
+			overflow: hidden;
+			height: 2.81rem;
+			line-height: 2.81rem;
+			padding-left: 10px;
+		}
+
+		.cc_search {
+			height: 2.81rem;
+			line-height: 2.81rem;
+			margin: 10px 0;
+		}
+
+		.cc_search em {
+			width: 1.38rem;
+			height: 1.38rem;
+			margin: 2px 0;
+			display: inline-block;
+			background: url(assets/images/lp_search.png) no-repeat;
+			background-size: 100%;
+		}
+
+		.cc_input input {
+			height: 2rem;
+			border: none;
+			width: 63%;
+			margin-left: 10px;
+		}
+
+		.cc_btn {
+			background: #eb3c3c;
+			color: #fff;
+			width: 19%;
+			text-align: center;
+			font-size: 1.06rem;
+		}
+
+		.cc_map {
+			width: 100%;
+			height: 15.19rem;
+			background: #fff;
+			overflow: hidden;
+		}
+
+		.cc_maplist {
+			width: 97%;
+			margin: 10px auto;
+			background: #fff;
+		}
+
+		.cc_maplist li {
+			overflow: hidden;
+		}
+
+		.cc_maplist li p:nth-child(1) {
+			width: 20%;
+			border-right: 1px solid #f0f0f0;
+		}
+
+		.cc_maplist li p:nth-child(2) {
+			padding-left: 10px;
+		}
+
+		.cc_maplist li p {
+			/*display: table-cell;
+            vertical-align: middle;*/
+			text-align: center;
+		}
+
+		.cc_maplist li p em {
+			width: 0.625rem;
+			height: 1rem;
+			display: inline-block;
+			background: url(assets/images/ana_search.png) no-repeat;
+			background-size: 100%;
+		}
+
+		.cc_maplist li {
+			line-height: 2.75rem;
+			border-bottom: 1px solid #f0f0f0;
+		}
+
+		.cc_main_map {
+			position: relative;
+		}
+
+		.cc_icon {
+			width: 1.83rem;   /*2.69rem*/
+			height: 3rem;  /*3.625rem*/
+			position: absolute;
+			top: 24%;
+			left: 50%;
+			margin-left: -1.23rem;
+		}
+
+		.cc_icon img {
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body ng-app="chooseAddrApp" ng-controller="ChooseAddrController">
+<div class="cc_main">
+	<div class="cc_main_map">
+
+        <div>
+            <input type="text" ng-model="searchText">
+            <button ng-click="search()">搜索</button>
+        </div>
+
+		<div class="cc_map" id="cc_map">
+			<!--<img src="assets/images/map.png" style="width:100%;height:100%;">-->
+		</div>
+		<div class="cc_icon">
+			<img src="assets/images/position_icon2.png" />
+		</div>
+	</div>
+
+	<div class="cc_maplist">
+		<ul id="cc_searchAddrListData">
+			<li class="lp_searchLi" ng-repeat="addr in addrArr" ng-click="toNewAddr(addr)">
+				<p class="fl">
+					<em></em>
+				</p>
+				<p class="fl">
+					<a href="addNewAddr.html" ng-bind="addr.address"></a>
+				</p>
+			</li>
+
+			<!--<li class="lp_searchLi">
+				<p class="fl">
+					<em></em>
+				</p>
+				<p class="fl">
+					<a href="addNewAddr.html">尚硅谷it教育2</a>
+				</p>
+			</li>
+
+			<li class="lp_searchLi">
+				<p class="fl">
+					<em></em>
+				</p>
+				<p class="fl">
+					<a href="addNewAddr.html">尚硅谷it教育3</a>
+				</p>
+			</li>-->
+		</ul>
+	</div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ta67M7R4GGToWMiWGfG5PajOXzQMwBik"></script>
+<script type="text/javascript" src="assets/js/angular.js"></script>
+<script type="text/javascript">
+    angular.module('chooseAddrApp', [])
+        .controller('ChooseAddrController', function($scope, $http){
+
+
+
+            // 百度地图API功能
+            //注意：cc_map是对应的div，也就是地图在页面上显示的位置
+            var map = new BMap.Map("cc_map");    // 创建Map实例
+
+			var locationAddr = JSON.parse(sessionStorage.getItem('_location_addr_'));
+
+			console.log('locationAddr的值是：',locationAddr);
+
+            //var point = new BMap.Point(116.404, 39.915);//设置中心点坐标对象
+
+			var point = new BMap.Point(locationAddr.lng, locationAddr.lat);//设置中心点坐标对象
+
+			map.centerAndZoom(point, 11);  // 初始化地图,11为和地图级别
+            map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+            map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+            map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+            //showList();
+            map.addEventListener('moveend', showList);//监视移动完成
+            map.addEventListener('zoomend', showList);//监视缩放完成
+
+            // 初始化地图,设置中心点坐标和地图级别
+            map.centerAndZoom(point, 15);//这句话一定要写
+            /*function showList(){
+                alert('ok');
+            }*/
+            function showList(){
+                //得到中心点的坐标
+                var center = map.getCenter();
+                //console.log(center);//中心点坐标
+
+                //ajax请求得到附近地址列表
+                var url = 'http://api.map.baidu.com/geocoder/v2/?ak=ta67M7R4GGToWMiWGfG5PajOXzQMwBik' +
+                        '&callback=JSON_CALLBACK&location='+center.lat+','+center.lng+'&output=json&pois=1';
+                $http.jsonp(url)
+                        .success(function(data){
+                            console.log('您当前的详细信息是：', data);
+                            $scope.addrArr = [];
+                            var result = data.result;
+                            var cityId = result.cityCode;
+                            result.pois.forEach(function(item){
+                                $scope.addrArr.push({
+                                    cityId : cityId,
+                                    lat : item.point.y,
+                                    lng : item.point.x,
+                                    address : item.addr
+                                });
+                            });
+                        })
+                        .error(function(data){
+                            alert(data);
+                        });
+            }
+            var myGeo = new BMap.Geocoder();
+            $scope.search = function(){
+                var searchText = $scope.searchText;
+                // 创建地址解析器实例
+
+                myGeo.getPoint(searchText, function(point){
+                    if(point){
+                        map.centerAndZoom(point, 15);
+                        showList();
+                    }else{
+                        alert('亲，您选择的地址不能解析哟~');
+                    }
+                }, '北京市');
+            };
+
+            //周一要讲
+			$scope.toNewAddr = function(address){
+				sessionStorage.setItem('_search_addr_', JSON.stringify(address));
+				window.location = 'addNewAddr.html';
+			};
+
+
+            var geolocation = new BMap.Geolocation();
+            geolocation.getCurrentPosition(function(r){
+                if(this.getStatus() == BMAP_STATUS_SUCCESS){
+                    var mk = new BMap.Marker(r.point);
+                    map.addOverlay(mk);
+                    map.panTo(r.point);
+                    //alert('您的位置：'+r.point.lng+','+r.point.lat);
+                    console.log('您的位置：'+r.point.lng+','+r.point.lat);
+                }
+                else {
+                    alert('failed'+this.getStatus());
+                }
+            },{enableHighAccuracy: true})
+
+
+        });
+</script>
+</body>
+</html>

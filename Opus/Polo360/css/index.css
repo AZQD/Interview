@@ -1,0 +1,378 @@
+body{
+	background:url(../img/header/body-bg.png) repeat-x ;
+	font: 12px Georgia;
+}
+.w{width: 940px;
+		margin: 0 auto;
+}
+.logo{padding: 37px 0px 0px 15px;}
+
+.nav{
+	float: right;
+	margin-top: 58px ;
+	border-left:#d6d6d6 1px dotted ;
+	
+}
+.nav li{
+	float: left;
+	padding: 0px 8px 8px ;
+}
+li a{
+	text-decoration: none;
+	color: #666666;
+	font:bolder 14px Georgia;
+}
+li a:hover{
+	color: #959494;
+}
+li p{
+	font:  11px tahoma ;
+	color: #b7b7b7;
+}
+
+/*设置banner*/
+.banner{
+	margin-top: 41px;
+	height: 355px;
+	background: url(../img/banner/banner-bg.png) no-repeat  ;
+	position: relative;
+	
+}
+.banner-pic{
+	padding: 6px 0px 0px 1px;
+}
+
+#tive{
+	position: absolute;
+	left: 19px;
+	bottom: 20px;
+}
+
+.banner .noactive{
+	background: url(../img/banner/banner_noactive.png) no-repeat;
+}
+.banner a{
+	float: left;
+	width: 17px;
+	height: 17px;
+	background: url(../img/banner/banner_active.png) no-repeat;
+	margin-left: 4px;
+}
+.banner a:hover{
+	background: url(../img/banner/banner_active.png) no-repeat;
+}
+
+/*设置content*/
+
+.content h2{
+	height: 49px;
+	font: bold 24px Georgia;
+	text-align: center;
+	padding: 6px 0 0px 0 ;
+	
+}
+#h2line{
+	height: 8px;
+	background: url(../img/content/content-h2bg.png) no-repeat center;
+}
+.contentA,.contentB,.contentC{
+	width: 300px;
+	height: 473px;
+	/*background-color: #bfa;*/
+	float: left;
+	margin-right: 20px;
+}
+.contentC{
+	margin: 0px;
+}
+.contentA h3,.contentB h3,.contentC h3{
+	font: 21px Georgia;
+	color: #11719e;
+	padding-top: 30px;
+}
+.contentA .p1,.contentB .p1,.contentC .p1{
+	font: 12px Helvetica;
+	color: #b8b8b8;
+}
+.contentA .picture1,.contentB .picture1,.contentC .picture1{
+	width: 300px;height: 202px;
+	margin-top: 14px;
+	background: url(../img/content/contentPic-bg.png) no-repeat center;
+}
+.picture1 img{
+	margin:12px 7px;
+}
+
+.contentA .p2,.contentB .p2,.contentC .p2{
+	font: 13px Helvetica;
+	color: #3e3e3e;
+	word-spacing: 5px;
+	letter-spacing: 0.5px;
+	margin-top: 14px;
+}
+
+.contentA button,.contentB button,.contentC button{
+	width: 163px;height: 32px;
+	font: 12px Helvetica;
+	color: #016999;
+	background: url(../img/content/btn-bg.png) no-repeat ;
+	text-align: left;
+	text-indent: 2px;
+	border: 0px;
+	margin-top: 20px;
+}
+.content{
+	background: url(../img/content/content-h2bg.png) no-repeat bottom center ;
+	overflow: hidden;
+}
+/*设置contact*/
+.contact{
+	overflow: hidden;
+}
+.contactA,.contactB,.contactC{
+	width: 300px;
+	height: 373px;
+	/*background-color: #bfa;*/
+	float: left;
+	margin-right: 20px;
+	position: relative;
+
+}
+.contactC{
+	margin: 0px;
+}
+
+.contactA h1{
+	height: 23px;
+	border-bottom: #d3d3d3 1px dashed;
+	color: #646464;
+	font: 18px Georgia;
+	padding-top: 35px;
+}
+
+.contactA .p1{
+	height: 25px;
+	color: #444444;
+	font: 12px Helvetica;
+/*	background-color: red;*/
+	padding: 13px 0 8px 0;
+}
+
+.contactA .a1{
+	background: url(../img/contact/contactA01.png) no-repeat;
+	float: left;
+	width: 57px;
+	height: 57px;
+}
+.contactA .a2{
+	background: url(../img/contact/contactA02.png) no-repeat;
+	float: left;
+	width: 57px;
+	height: 57px;
+}
+.contactA .a3{
+	background: url(../img/contact/contactA03.png) no-repeat;
+	float: left;
+	width: 57px;
+	height: 57px;
+}
+.contactA .a4{
+	background: url(../img/contact/contactA04.png) no-repeat;
+	float: left;
+	width: 57px;
+	height: 57px;
+}
+.contactA .a5{
+	background: url(../img/contact/contactA05.png) no-repeat;
+	float: left;
+	width: 57px;
+	height: 57px;
+}
+#hyper{
+overflow: hidden;
+}
+.contactA h2{
+	height: 12px;
+	border-bottom: #d3d3d3 1px dashed;
+	color: #444444;
+	font: bold 18px GillSansMT;
+/*	background-color: red;*/
+	padding: 38px 0 10px 0;
+	_padding: 28px 0 10px 0;
+}
+
+.contactA .p2{
+	height: 26px;
+	color: #444444;
+	font: 12px Helvetica;
+/*	background-color: red;*/
+	padding: 12px 0 13px 0;
+}
+.contactA input{
+	display: block;
+	width: 286px;
+	height: 33px;
+	font: 10px Verdana;
+	color: #d4d4d4;
+	background: url(../img/contact/contact-bg01.png) no-repeat center;
+	border: 0px;
+	line-height: 33px;
+	padding: 0 0 0 10px;
+	margin-bottom: 11px;
+	
+/*	background-color: red;*/
+}
+.contactA button{
+	width: 163px;height: 32px;
+	text-align: left;
+	font: 13px Georgia;
+	color: #f7fafb;
+	background: url(../img/contact/contactA-bg2.png) no-repeat;
+	border: 0px;
+	position: absolute;
+	bottom: 20px;
+}
+
+
+
+.contactB h1{
+	height: 23px;
+	border-bottom: #d3d3d3 1px dashed;
+	color: #646464;
+	font: 18px Georgia;
+	padding-top: 35px;
+}
+
+.contactB #text1{
+	display: block;
+	width: 296px;
+	height: 33px;
+	font: 10px Verdana;
+	color: #d4d4d4;
+	background: url(../img/contact/contact-bg01.png) no-repeat center;
+	border: 0px;
+	padding: 0px;
+	text-indent: 10px;
+	margin-top: 15px;
+	line-height: 33px;
+/*	background-color: red;*/
+}
+.contactB #text2{
+	display: block;
+	width: 296px;
+	height: 33px;
+	font: 10px Verdana;
+	color: #d4d4d4;
+	background: url(../img/contact/contact-bg01.png) no-repeat center;
+	border: 0px;
+	margin-top: 17px;
+	padding: 0px;
+	text-indent: 10px;
+/*	background-color: red;*/
+}
+.contactB textarea{
+	/*display: block;*/
+	width: 296px;
+	height: 135px;
+	color: #d4d4d4;
+	background: url(../img/contact/contactB-bg02.png) no-repeat center;
+	border: 0px;
+	overflow: hidden;
+	resize: none;
+	padding: 0px;
+	margin-top: 15px;
+/*	background-color: red;*/
+}
+.contactB button{
+	width: 163px;height: 32px;
+	text-align: left;
+	font: 13px Georgia;
+	color: #f7fafb;
+	background: url(../img/contact/contactA-bg2.png) no-repeat center center;
+	border: 0px;
+	margin-top: 11px;
+	position: absolute;
+	bottom: 20px;
+	
+	}
+	#sp{_margin-left:10px;}
+	
+.contactC h1{
+	height: 23px;
+	border-bottom: #d3d3d3 1px dashed;
+	color: #646464;
+	font: 18px Georgia;
+	padding-top: 35px;
+}
+
+.contactC #contactC1,.contactC #contactC2,.contactC #contactC3{
+	height: 81px;
+	border-bottom: #d3d3d3 1px dashed;
+	background: url(../img/contact/contactC-bg.png) no-repeat 1px 14px;
+}
+.contactC #contactC1,.contactC #contactC2,.contactC #contactC3{
+	height: 73px;
+	border-bottom: #d3d3d3 1px dashed;
+	background: url(../img/contact/contactC-bg.png) no-repeat 1px 14px;
+}
+.contactC #contactC1,.contactC #contactC2,.contactC #contactC3{
+	height: 81px;
+	border-bottom: #d3d3d3 1px dashed;
+	background: url(../img/contact/contactC-bg.png) no-repeat 1px 14px;
+}
+
+
+.contactC  #contact-img01,.contactC  #contact-img02,.contactC  #contact-img03{
+	position: absolute;
+	top:20px;
+	left: 7px;
+}
+.contactC  #contact-img01,{
+	position: absolute;
+	top:20px;
+	left: 6px;
+}
+.contactC p{
+	/*float: right;*/
+	padding: 15px  0 24px 66px;
+	_padding: 15px  0 13px 66px;
+	color: #444444;
+	font: 12px Helvetica;
+}
+#contactC1,#contactC2,#contactC3{
+	position: relative;
+	}
+	
+.contactC button{
+	width: 163px;height: 32px;
+	text-align: left;
+	font: 13px Georgia;
+	color: #f7fafb;
+	background: url(../img/contact/contactA-bg2.png) no-repeat center center;
+	border: 0px;
+	margin-top: 14px;
+	position: absolute;
+	bottom: 20px;
+	}
+	
+/*设置footer*/
+
+.footer{
+	height: 144px;
+	background: url(../img/footer/polo360.png) repeat-x;
+	font: 11px Helvetica;
+	color: #999;
+	padding-top: 27px;
+	line-height: 21px;
+}
+.footerp2{
+	float: right;
+}
+.footer a{
+	text-decoration: none;
+	color:#999;
+}
+.footer a:hover{
+	text-decoration: underline;
+	color: #dbd9d9;
+}

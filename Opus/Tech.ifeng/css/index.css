@@ -1,0 +1,223 @@
+/*1.公共样式*/
+.wrapper {
+    margin: 0 auto;
+    width: 980px;
+}
+.clear{
+    clear: both;
+}
+
+
+nav{
+    font-size: 12px;
+    background: #ffffff;
+    height: 28px;
+    line-height: 28px;
+    /*background: red;*/
+}
+.nav-links{
+    float: left;
+}
+
+.nav-links li{
+   float: left;
+    background: url("../img/line.gif") no-repeat right center;
+    padding: 0 9px;
+}
+
+.nav-links .word{
+    padding-left:0;
+}
+
+nav a:link,nav a:visited{
+    color: #999;
+    text-decoration: none;
+}
+
+nav a:hover,nav a:active{
+    color: #f00;
+    text-decoration: underline;
+}
+.nav-last-li{
+    background: none;
+}
+
+
+
+
+
+.nav-more{
+    float: left;
+    position: relative;
+}
+
+#nav-more-link{
+    display: block;
+    float: left;
+    padding:0 10px;
+    position: absolute;
+    width: 34px;
+    z-index: 99;
+    border: 1px solid transparent;
+    background-color: #fff;
+}
+
+.nav-more-links li{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.nav-more-links{
+    display:none;
+    position: absolute;
+    float: left;
+    width: 200px;
+    top: 29px;
+    border: 1px solid #f0f0f0;
+    background-color: #fff;
+}
+
+.nav-more:hover .nav-more-links{
+    display: block;
+}
+.nav-more:hover #nav-more-link{
+    border: 1px solid #f0f0f0;
+    border-bottom: 1px solid transparent;
+    z-index: 999;
+}
+
+.login{
+    float: right;
+}
+.login a{
+    padding-left: 10px;
+}
+/*2.页眉*/
+header{
+    border-bottom: 1px solid #f0f0f0;
+    /*background: red;*/
+    /*vertical-align: middle;*/
+    height: 26px;
+    line-height: 26px;
+    padding: 15px 0 10px;
+
+   /* overflow: hidden;*/
+}
+header img{
+    float: left;
+    padding-right: 5px;
+}
+header li{
+    float: left;
+    font-size: 12px;
+    padding-left: 5px;
+    color:#551A8B;
+}
+
+
+/*3.文章正文*/
+.article-content{
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+article{
+    float: left;
+    width: 75%;
+}
+.article-content h1{
+    padding:20px 0 15px;
+    font-size: 24px;
+}
+.article-info{
+    font-size: 12px;
+    color: #999;
+    border-bottom:1px #f0f0f0 solid;
+    padding-bottom: 5px;
+}
+.article-info-left{
+    float: left;
+}
+
+.article-info-right{
+    float: right;
+    vertical-align: middle;
+    /*padding-right: 20px;*/
+}
+/*右侧*/
+.icon{
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    background: url("../img/icon-webs.jpg") no-repeat;
+    vertical-align: middle;
+}
+.icon-qqZone{
+    background: url("../img/icon-webs.jpg") no-repeat 0 -32px;
+}
+.icon-weChat{
+    background: url("../img/icon-webs.jpg") no-repeat 0 -66px;
+}
+
+/*王思聪*/
+.avator{
+    text-align: center;
+    /*background-color: red;*/
+    padding: 10px 0;
+}
+.avator h2{
+    font-size: 14px;
+    line-height: 2.6;
+}
+
+/*正文内容*/
+section p{
+    font-size: 14px;
+    text-indent: 2em;
+    line-height: 1.8;
+    color: #2b2b2b;
+}
+section h3{
+    font-size: 20px;
+    line-height: 2.5;
+}
+
+.article-content aside{
+    float:left;
+    width:25%;
+    /*background-color: red;*/
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+aside h4{
+    border-left: 5px solid black;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+aside a{
+    font-size: 12px;
+}
+
+aside a:link,aside a:visited{
+    color: #004276;
+    text-decoration: none;
+}
+
+aside a:hover,aside a:active{
+    color: #f00;
+    text-decoration: underline;
+}
+/*4.页脚*/
+footer{
+    border-top: 1px solid #f0f0f0;
+}
+
+.copyright{
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    /*line-height: 3;*/
+    padding: 10px 0 20px;
+}

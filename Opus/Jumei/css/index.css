@@ -1,0 +1,278 @@
+.wrapper{
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 640px;
+}
+
+/*头部*/
+header{
+    display: table;
+    height: 4rem;
+    width: 100%;
+    background:url("../img/float_car.png")no-repeat;
+}
+.cell{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
+.hd-logo img{
+    display: block;
+    width: 3.1875rem;
+    height: 3.1875rem;
+    padding: 0 1rem;
+}
+.hd-ad{
+    width: 100%;
+}
+.hd-exp span{
+    display: block;
+    width: 7.5rem;
+    height: 2.5rem;
+    background-color: #FE4478;
+    margin-right: 2rem;
+    text-align: center;
+    line-height: 2.5rem;
+    color: #fff;
+    border-radius: 1.25rem;
+    font-size: 1.25rem;
+}
+.hd-exp{
+    position: relative;
+}
+.hd-exp img{
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+}
+.hd-exp img:hover{
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+}
+#hd-ad1{
+    font-size: 1.1875rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+ /*nav导航*/
+
+/*.nav-menu{
+    width: 100%;
+    height: 3.25rem;
+    background-color: #ED145B;
+    line-height: 3.25rem;
+    position: relative;
+}
+.nav-menu img:first-child{
+    vertical-align: middle;
+    padding-left: 1rem;
+    width: 6%;
+
+}
+
+.nav-menu img:last-child{
+    vertical-align: middle;
+    position: absolute;
+    width: 9%;
+    top: 0.5%;
+    right: 1%;
+}*/
+
+.nav-menu{
+    width: 100%;
+    height: 3.25rem;
+    background-color: #ED145B;
+    display: table;
+}
+.nav-menu div:first-child{
+    display: table-cell;
+   /* background-color: blue;*/
+    vertical-align: middle;
+    width: 90%;
+    padding-left: 3%;
+}
+.nav-menu div:first-child img{
+    width: 8%;
+
+}
+.nav-menu div:last-child img{
+    width: 90%;
+
+}
+.nav-menu div:last-child{
+    display: table-cell;
+   /* background-color: lawngreen;*/
+    vertical-align: middle;
+    padding-right: 1%;
+    width:10%;
+
+}
+
+/*nav导航和二级菜单*/
+
+.nav-list{
+    height: 3.1875rem;
+    border:0.0625rem solid #f0f0f0;
+    border-right: none;
+    position: relative;
+    zoom: 1;
+}
+.nav-list:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.nav-list>li{
+    width: 25%;
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+    border-right: 0.0625rem solid #f0f0f0;
+    text-align: center;
+}
+.nav-list>li>a{
+    display: block;
+    width: 100%;
+    height: 3.1875rem;
+    line-height: 3.1875rem;
+    position: relative;
+    color: black;
+    font-weight: bold;
+}
+.nav-list>li>a:hover,.nav-list>li>a:active{
+    color: red;
+    text-decoration: none;
+}
+
+.nav-sub a{
+    color: black;
+}
+.nav-sub a:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.nav-list>li>a:after{
+    content: "";
+    width:0;
+    height: 0;
+    border-top: 0.1875rem solid transparent;
+    border-right: 0.1875rem solid black;
+    border-bottom: 0.1875rem solid black;
+    border-left: 0.1875rem solid transparent;
+    display: inline-block;
+    position: absolute;
+    bottom: 0.3125rem;
+    right: 0.3125rem;
+}
+
+ /*二级菜单*/
+
+.nav-sub{
+    position: absolute;
+    top: 3.25rem;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.nav-second{
+    border:0.0625rem solid #f0f0f0 ;
+    border-right: none;
+    border-bottom: none;
+    margin: 0 1.25rem;
+    overflow: hidden;
+    display:none;
+    background-color: #fff;
+}
+.nav-list>.list-one:hover .nav-second1{
+     display: block;
+ }
+.nav-list>.list-two:hover .nav-second2{
+     display: block;
+ }
+.nav-list>.list-three:hover .nav-second3{
+     display: block;
+ }
+.nav-list>.list-four:hover .nav-second4{
+     display: block;
+ }
+
+
+.nav-second li{
+    float: left;
+    width: 33.333%;
+    border-right:0.0625rem solid #f0f0f0 ;
+    border-bottom:0.0625rem solid #f0f0f0 ;
+    box-sizing: border-box;
+}
+.nav-second li>a{
+    display: block;
+    height:2.5rem;
+    line-height: 2.5rem;
+}
+
+/* goods*/
+.goods li{
+    overflow: hidden;
+    border-bottom: 0.0625rem solid #f0f0f0;
+    padding: 0.625rem 0;
+    width: 100%;
+    height: 12.25rem;
+}
+.goods div{
+    float: left;
+}
+
+.goods div:nth-child(1){
+    width: 30%;
+    border: 0.0625rem solid #f0f0f0;
+    margin: 0 0.625rem;
+}
+.goods .img1{
+    /*width: 12rem;
+    height: 12rem;*/
+    width: 100%;
+    vertical-align: middle;
+}
+.goods-img{
+    position: relative;
+
+}
+.goods .img2{
+    /*width: 4.25rem;
+    height: 3.375rem;*/
+    width: 36%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.goods div:last-child{
+    width: 63%;
+}
+
+.describe .span1{
+    font-size: 1.3125rem;
+    color: #776969;
+}
+.describe .span2{
+    display: block;
+    font-size: 1.3125rem;
+    color: #F04E5B;
+    padding-top: 0.3125rem;
+}
+
+@media screen and (max-width: 550px){
+    html{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 450px){
+    html{
+        font-size: 12px;
+    }
+}

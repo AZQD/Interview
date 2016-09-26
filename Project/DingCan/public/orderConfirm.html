@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单确认</title>
+		<meta content="telephone=no" name="format-detection">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="on" http-equiv="cleartype">
+
+		<link rel="stylesheet" type="text/css" href="assets/css/1reset.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/2layout.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/common.css" />
+
+	</head>
+	<style>
+		* {
+			margin: 0 auto;
+		}
+
+		#oc_main {
+			width: 100%;
+			height: 100%;
+		}
+
+		.oc_addr {
+			width: 97%;
+			background-color: #fff;
+			margin: 0 auto;
+			padding: 2% 10px;
+			/*margin-top: 5px;*/
+			border-bottom: 1px solid #f0f0f0;
+		}
+
+		.oc_addr p {
+			font-weight: bold;
+		}
+
+		.oc_userName {
+			font-size: 1rem;
+		}
+
+		.oc_tel {
+			padding-left: 1.5rem;
+		}
+
+		.oc_tel,
+		.oc_userAddr {
+			font-size: 0.88rem;
+			color: #646464;
+		}
+
+		.oc_userAddr {
+			margin-top: 0.3rem;
+		}
+
+		.oc_addr p:nth-child(1) {
+			line-height: 1.5rem;
+		}
+
+		.oc_addr i {
+			width: 0.6rem;
+			height: 1.06rem;
+			background: url(assets/images/om_left.png) no-repeat;
+			background-size: 100%;
+			display: block;
+			position: absolute;
+			right: 1.25rem;
+			top: 1.96rem;
+		}
+
+		.oc_orderDetail {
+			width: 97%;
+			background-color: #fff;
+			margin: 0 auto;
+		}
+
+		.oc_label {
+			margin-left: 4%;
+			margin-top: 0.625rem;
+			width: 4.38rem;
+			background-color: #fff;
+			height: 1.88rem;
+			line-height: 1.88rem;
+			text-align: center;
+			font-size: 0.88rem;
+			color: #969696;
+			border-bottom: 1px solid #f0f0f0;
+		}
+
+		.oc_food {
+			overflow: hidden;
+			padding: 10px 8px;
+		}
+
+		.oc_food dt {
+			width: 4.38rem;
+			height: 4rem;
+			margin-right: 10px;
+			padding: 0.31rem 0;
+		}
+
+		.oc_food dt img {
+			border: 1px solid #d9d9d9;
+			width: 100%;
+			height: 100%;
+		}
+
+		.oc_food dl {
+			overflow: hidden;
+			border-bottom: 1px solid #f0f0f0;
+		}
+
+		.oc_food dl dd {
+			/*height: 50px;
+			line-height: 50px;*/
+			margin-top: 6%;
+			width: 70%;
+		}
+
+		.oc_food dl dd p {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.oc_food dl dd p:nth-child(1) {
+			width: 62%;
+		}
+
+		.oc_food dl dd p:nth-child(3) {
+			text-align: right;
+		}
+
+		.oc_cost {
+			width: 97%;
+			background-color: #fff;
+			margin: 0 auto;
+			padding: 0 10px;
+			margin-bottom: 4rem;
+		}
+
+		.oc_tar {
+			text-align: right;
+		}
+
+		.oc_cost ul li {
+			width: 100%;
+			line-height: 2rem;
+			overflow: hidden;
+			border-bottom: 1px dashed #c8c8c8;
+			font-size: 0.88rem;
+		}
+
+		.oc_cost ul li:last-child {
+			border: none;
+			padding-bottom: 10px;
+		}
+
+		.oc_btn {
+			width: 92%;
+			height: 2.81rem;
+			line-height: 2.81rem;
+			text-align: center;
+			/*margin: 20px auto;*/
+			border: none;
+			display: block;
+			font-size: 1.3rem;
+			margin: 0.2rem auto;
+		}
+
+		.oc_nbtn{
+			background: #b7b7b7;
+			color: #fff;
+		}
+
+		.oc_ybtn{
+			background: #1eb428;
+			color: #fff;
+		}
+
+		.oc_btn_div {
+			width: 100%;
+			height: 3.3rem;
+			line-height: 3.3rem;
+			background: #fff;
+			position: fixed;
+			bottom: 0;
+			border-top: 1px solid #f0f0f0;
+		}
+
+		.oc_sendTime {
+			width: 97%;
+			background-color: #fff;
+			margin: 0 auto;
+			overflow: hidden;
+			padding: 0.625rem 10px;
+		}
+
+		.oc_time {
+			text-align: left;
+			width: 7rem;
+			height: 1.88rem;
+			line-height: 1.88rem;
+			text-align: center;
+			margin-left: 4%;
+			font-size: 0.75rem;
+			color: #999999;
+			/*background: url(assets/images/select.jpg) no-repeat;
+			background-size: 100%;*/
+		}
+
+		#oc_time {
+			background: rgba(0, 0, 0, 0);
+			border: 0;
+			border-radius: 0;
+			height: 1.88rem;
+			width: 100%;
+			background: url(assets/images/select.jpg) no-repeat;
+			background-size: 100%;
+		}
+
+		.oc_estimate {
+			color: #c8c8c8;
+			font-size: 0.69rem;
+		}
+
+		.oc_sendTime p {
+			padding-top: 0.5rem;
+			margin-left: 2px;
+		}
+
+		.oc_next {
+			width: 3.43rem;
+			border: 1px solid #dcdcdc;
+			height: 1.88rem;
+			background: url(assets/images/oc_next.jpg) no-repeat;
+			background-size: 100%;
+		}
+
+		.oc_dpn {
+			display: none;
+		}
+
+		.oc_foodNum {
+			margin-right: 5%;
+		}
+
+		.oc_remarks {
+			padding: 10px 5px;
+			width: 97%;
+			margin: 0 auto;
+		}
+
+		.oc_remarks p {
+			color: #c8c8c8;
+		}
+
+		.oc_remarks textarea {
+			width: 98%;
+			height: 3rem;
+			margin-top: 5px;
+			border: 2px solid #dcdcdc;
+			border-radius: 0;
+			overflow: auto;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+		}
+
+		.oc_shadow {
+			width: 100%;
+			height: 100%;
+			background: rgba(1, 1, 1, 0.5);
+			position: absolute;
+		}
+
+		.oc_cost_coupon {
+			color: #eb3c3c;
+		}
+
+		.toChooseCoupon span {
+			float: left;
+		}
+
+		.toChooseCoupon i {
+			width: 0.6rem;
+			height: 1.06rem;
+			background: url(assets/images/om_left.png) no-repeat;
+			background-size: 100%;
+			display: inline;
+			float: right;
+			margin-top: 0.47rem;
+			margin-left: 0.47rem;
+		}
+		.load_div{
+			position: absolute;
+			top: 40%;
+			left: 50%;
+		}
+		@media only screen and (min-width: 320px) and (max-width: 480px) {
+			html {
+				font-size: 17px;
+			}
+		}
+	</style>
+
+	<body ng-app="orderApp" ng-controller="OrderController">
+		<div id="oc_main">
+			<div class="oc_addr">
+				<a href="#">
+					<p><span class="oc_userName" ng-bind="address.contactor"></span>
+                        <span class="oc_tel" ng-bind="address.phone"></span></p>
+					<p class="oc_userAddr" ng-bind="address.address+address.doorplate"></p>
+					<i></i>
+				</a>
+			</div>
+			<div class="oc_sendTime">
+				<p class="fl">送餐时间:</p>
+				<div class="fl oc_time">
+					<select id="oc_time" ng-model="order.arrive_time">
+						<!--<option value="">未选择</option>-->
+						<option value="{{time.arriveTime}}" ng-repeat="time in times" ng-bind="time.timeText"></option>
+					</select>
+				</div>
+				<p class="fl oc_estimate">预计1小时后送达</p>
+			</div>
+			<div class="oc_label">订单明细</div>
+			<div class="oc_orderDetail">
+				<div class="oc_food">
+					<dl ng-repeat="meal in cart.meals">
+						<dt class="fl">
+							<img  ng-src="{{meal.picture}}" />
+						</dt>
+						<dd class="fl">
+							<p class="oc_foodName fl" ng-bind="meal.mealName"></p>
+							<p class="oc_foodPric fr" ng-bind="meal.price+'元'"></p>
+							<p class="oc_foodNum fr" ng-bind="'X'+meal.count"></p>
+						</dd>
+					</dl>
+				</div>
+
+				<div class="oc_remarks">
+					<p>备注</p>
+					<textarea class="oc_remark" ng-model="remark" ng-model="order.remark"></textarea>
+				</div>
+			</div>
+			<div class="oc_label">费用小计</div>
+			<div class="oc_cost">
+				<ul>
+					<li>
+						<span class="fl">配送费用</span>
+						<span class="fr oc_delivery" ng-bind="(cart.songcanfei| currency: '¥')+'元'"></span>
+					</li>
+ 					<li>
+						<span class="fl">费用合计</span>
+						<span class="fr oc_total" ng-bind="(cart.totalPrice+cart.songcanfei|currency:'¥')+'元'">￥23</span>
+					</li>
+				</ul>
+			</div>
+			<div class="oc_btn_div">
+				<button class="oc_btn oc_ybtn btn" href="javascript:" ng-click="submit()">微信支付</button>
+			</div>
+			<div class="load_div oc_dpn">
+				<img src="assets/images/load.gif" />
+			</div>
+		</div>
+	<script type="text/javascript" src="assets/js/angular.js"></script>
+	<script type="text/javascript">
+	    angular.module('orderApp', [])
+				.controller('OrderController', function($scope, $http){
+                    //检查用户是否登陆, 如果没有提示登陆
+					var userJson = localStorage.getItem('_user_');
+                    if(userJson == null){
+                        alert('请先登录哦！');
+                        window.location = 'login.html';
+                        return;
+                    }
+                    //保存user
+                    $scope.user = JSON.parse(userJson);
+
+                    //读取session中的_session_address_
+                    var addressJson = sessionStorage.getItem('_session_address_');
+                    if(addressJson == null){
+                        $http.get('/order/getNewestAddress?userId='+$scope.user._id)
+                                .success(function (result) {
+                                    console.log('获取的默认地址是：',result);
+                                    if(result.code == 0){
+                                        console.log('code==0');
+                                        $scope.address = result.data;
+                                        console.log('$scope.address',$scope.address);
+                                    }else{
+                                        alert('请先添加地址~');
+                                        window.address = 'addNewAddr.html';
+                                    }
+                                })
+                                .error(function (result) {
+                                    alert(result);
+                                });
+                    }else{
+                        $scope.address = JSON.parse(addressJson);
+                    }
+
+
+                    //读取session中购物车的数据
+                    $scope.cart = JSON.parse(sessionStorage.getItem('_cart_'));
+                    console.log('购物车中的内容是：', $scope.cart);
+
+                    showTime();
+                    function showTime (){
+                        var times = [];
+                        var date = new Date();
+                        var year = date.getFullYear();
+                        var month = date.getMonth()+1;
+                        var day = date.getDate();
+
+                        var hour = date.getHours();
+                        var minute = date.getMinutes();
+                        console.log(minute);
+                        //var second = date.getSeconds();
+
+                        //添加立即配送
+                        times.push({
+                            timeText : '立即配送',
+                            arriveTime : year+'-'+month+'-'+day+' '+(hour+1)+':'+minute
+                        });
+                        while(true){
+                            minute += 15;
+                            if(minute>=60){
+                                minute -= 60;
+                                hour ++;
+                            }
+
+                            //限制最后时间
+                            //注意！！！这个时间是可控的，需要根据当前时间进行调整。
+                            if(hour == 24){
+                                break; //跳出当前循环
+                            }
+
+                            //添加一个时间点
+                            times.push({
+                                //注意当minute小于10时，对它进行转换
+                                timeText : hour+':'+(minute<10?('0'+minute):minute),
+                                arriveTime : year+'-'+month+'-'+day+' '+(hour+1)+':'+minute
+                            });
+                        }
+                        $scope.times = times;
+                        console.log('获取的时间列表是：',$scope.times);
+                    }
+
+
+                    $scope.submit = function(){
+                        /*
+                        * {
+                         "_id": {
+                         "$oid": "575f7085f8a14116283daba4"
+                         },
+                         "contactor": "张晓飞",
+                         "address": "平西府",
+                         "phone": "1310000000",
+                         "rstName": null,
+                         "remark": "不错不错",
+                         "doorplate": "硅谷大楼",
+                         "total_money": 65,
+                         "peisongfei": 0,
+                         "state": 3,
+                         "arrive_time": "2016-7-1 10:28",
+                         "detail": "{data:{\"rstId\":1,\"money\":65,\"meals\":[{\"mealId\":0,\"num\":1,\"price\":\"23\"},{\"mealId\":1,\"num\":2,\"price\":\"21\"}]}}",
+                         "user_id": "575f7085f8a14116283dabc4",
+                         "coupon_id": "575f7085f8a14116283dab23"
+                         }
+                        * */
+                        $scope.order.user_id = $scope.user._id;
+
+                        $scope.order.contactor = $scope.address.contactor;
+                        console.log('$scope.order.contactor的值是：', $scope.order.contactor);
+                        $scope.order.address = $scope.address.address;
+                        $scope.order.phone = $scope.address.phone;
+                        $scope.order.doorplate = $scope.address.doorplate;
+
+                        $scope.order.total_money = $scope.cart.totalPrice;
+                        $scope.order.peisongfei = $scope.cart.songcanfei;
+
+                        var detail = {
+                            data : {
+                                resId : $scope.cart.rstId,
+                                money : $scope.cart.songcanfei+$scope.cart.totalPrice,
+                                meals : $scope.cart.meals
+                            }
+                        };
+                        $scope.order.detail = JSON.stringify(detail);
+
+                        //如果想看这里面的数据，先把下面的window.location跳转页面注释了。
+						console.log('order的内容是：',$scope.order);
+
+                        $http({
+                            method : 'POST',
+                            url : '/order/createOrder',
+                            data : {order : $scope.order}
+                        }).success(function (result) {
+                            //如果想看这里面的数据，先把下面的window.location跳转页面注释了。
+                            console.log('点击微信支付返回的数据：', result);
+
+                            //删除缓存的数据 删除之后，如果再次测试，需要重新添加购物车的商品
+                            sessionStorage.removeItem('_session_address_');
+                            sessionStorage.removeItem('_cart_');
+
+                            alert('下单完成咯');
+                            //跳转到新的页面。注意：window.location可以直接跳转到指定路由
+                            //window.location = '/order/detail/'+result.data._id;
+                        }).error(function (result) {
+                            alert(result);
+                        });
+
+                    }
+
+
+                });
+	</script>
+	</body>
+</html>

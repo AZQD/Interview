@@ -1,0 +1,312 @@
+*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				/*background: url(../img/Home/home/main_bg.jpg) no-repeat center top;
+				background-size:100% 100%;
+				overflow: auto;*/
+				background:#2e597b url(../img/Home/home/main_bg.jpg) no-repeat center top;
+			}
+			/*设置首页*/
+			.breadth{
+				width: 966px;
+				margin: 0 auto;
+				/*background-color: #bfa;*/
+			}
+			
+			.home{
+				height: 121px;
+				position: relative;
+				/*background: red;*/
+			}
+			
+			.home-logo{
+				position: absolute;
+				left: 0px;
+				top: 44px;
+				border: none;
+			}
+			
+			.home-p{
+				font: 11px Georgia;
+				color: #d6e8f5;
+				padding-left: 806px;
+				padding-top: 54px;
+			}
+			.home-twitter{
+				position: absolute;
+				left: 940px;
+				top: 45px;
+				border: none;
+			}
+			
+			/*设置主框内容区*/
+			/*设置第一个内容区nav*/
+			.middle{
+				height: auto;
+				border-bottom:#0e0e0e 5px solid;
+				/*_margin-right: 20px;*/
+			}
+			
+			.middle .list{
+				height: 53px;
+				background: url(../img/Home/middle/nav/bg_menu.gif) repeat-x left top;
+			}
+			
+			.nav{
+				list-style: none;
+				
+			}
+			.nav li{
+				float: left;
+				font: normal 14px Georgia, "Times New Roman", Times, serif;
+				
+			}
+			.nav a{
+				height: 35px;
+				display: block;
+				text-align: center;
+				border-color: #000 #303030 #474747 #0a0a0a;
+				border-width: 1px;
+				border-style: solid;
+				color: #fff;
+				text-decoration: none;
+				padding-top: 16px;
+			}
+			
+			.nav a:hover{
+				background: url(../img/Home/middle/nav/hover.gif) repeat-x;
+			}
+			
+			.nav #a1{
+				width: 133px;
+				background: url(../img/Home/middle/nav/hover.gif) repeat-x;
+			}
+			.nav #a2{
+				width: 145px;
+			}
+			.nav #a3{
+				width: 150px;
+			}
+			.nav #a4{
+				width: 150px;
+			}
+			.nav #a5{
+				width: 123px;
+			}
+			.nav #a6{
+				width: 160px;
+			}
+			
+			/*设置第二个内容区info*/
+			.info{
+				height: 80px;
+				background: url(../img/Home/middle/info/bg_simple.gif) no-repeat;
+			}
+			.info-content{
+				width: 288px;
+				height: auto;
+				padding-left: 40px ;
+				/*background: red;*/
+			}
+			.info-content h1{
+				font: 40px Georgia, "Times New Roman", Times, serif;
+				color: #1c1d1c;
+				padding-top: 19px;
+				line-height: 48px;
+			}
+			
+			
+			
+			/*设置第三个区bottom*/
+			/*左侧*/
+			.bottom{
+			/*	height: 414px;*/
+				overflow: hidden;
+				background-image: url(../img/Services/Service-bg.png) repeat-x;
+				background-color: #fff;
+			}
+			.bottom h1{
+				font:24px Georgia, "Times New Roman", Times, serif;
+				color: #373737;
+				
+				padding-left: 5px;
+			}
+			.bottom1 .h11{
+				padding-left: 8px;
+				padding-top: 33px;
+			}
+			.bottom2-h11{
+				padding-top: 33px;
+			}
+			.bottom1{
+				width: 307px;
+				height: auto;
+				padding-left: 22px;
+				float: left;
+			}
+			.bottom1 ul{
+				float: left;
+				list-style: none;
+				padding-top: 14px;
+			}
+			.bottom1 .ul1{
+				width:253px;
+				padding-left: 3px;
+				padding-top: 9px;
+				
+			}
+			
+			.bottom1 li{
+				background: url(../img/Services/Sub_ul_li.gif) no-repeat left 11px;
+				line-height: 21px;
+				padding-left: 27px;
+				padding-bottom: 5px;
+				padding-top: 6px;
+				width: 280px;
+				border-bottom: #eaeaea 1px solid;
+			}
+			.bottom1 li a{
+				text-decoration: none;
+				font: 11px Georgia, "Times New Roman", Times, serif;
+				color: #3a3c3c;
+				padding-left: 3px;
+			}
+			
+		
+			/*右侧*/
+			.bottom2{
+				width: 531px;
+				height: auto;
+				padding-left: 53px;
+				float: left;
+				overflow: hidden;
+			}
+			.bottom2 ul{
+				float: left;
+				list-style: none;
+				padding-top: 17px;
+				width:253px;
+				padding-left: 3px;
+				padding-bottom: 30px;
+			}
+			
+			.bottom2 li{
+				font: 11px Georgia, "Times New Roman", Times, serif;
+				color: #3a3c3c;
+				background: url(../img/Home/bottom/ul_li.gif) no-repeat left center;
+				line-height: 24px;
+				padding-left: 20px;
+				width: 230px;
+			}
+			
+			
+			
+			.bottom h2,.bottom p{
+				font: 11px Georgia, "Times New Roman", Times, serif;
+				color: #8d8d8d;
+			}
+			.bottom h2{
+				font-weight: bold;
+				padding-bottom: 13px;
+				border-bottom:#eaeaea 1px solid;
+				color: #656565;
+			}
+			
+			.bottom .hh{
+				padding-top: 18px;
+				_padding-top: 11px;
+				padding-top: 11px \0;
+			}
+			.bottom p{
+				padding-top: 10px;
+				line-height: 18px;
+			}
+/*			.bottom .p1{
+				padding-bottom: 45px;
+				_padding-bottom: 25px;
+				padding-bottom: 25px  \0;
+			}*/
+			.bottom a{
+				font: 11px Georgia, "Times New Roman", Times, serif;
+				color: #50597b;
+				padding-bottom: 28px;
+				_padding-bottom: 28px;
+				text-decoration: none;
+				padding-left: 5px;
+				
+			}
+			.bottom2 .box1,.bottom2 .box2,.bottom2 .box3,.bottom2 .box4{
+				width: 250px;
+				padding-bottom: 4px;
+				
+			}
+			.bottom2 .box1 h1,.bottom2 .box2 h1,.bottom2 .box3 h1,.bottom2 .box4 h1{
+				padding-top: 20px;
+				border-bottom: #eaeaea 1px solid;
+				padding-bottom: 15px;
+			}
+			.bottom2 .box1 p{
+				padding-left: 75px;
+				background: url(../img/Services/ser_1.gif) no-repeat 10px 20px;
+				padding-top: 19px;
+			}
+			.bottom2 .box2 p{
+				padding-left: 75px;
+				background: url(../img/Services/ser_2.gif) no-repeat 10px 20px;
+				padding-top: 19px;
+			}
+			.bottom2 .box3 p{
+				padding-left: 75px;
+				background: url(../img/Services/ser_3.gif) no-repeat 10px 20px;
+				padding-top: 19px;
+			}
+			.bottom2 .box4 p{
+				padding-left: 75px;
+				background: url(../img/Services/ser_4.gif) no-repeat 10px 20px;
+				padding-top: 19px;
+			}
+			
+			
+			
+			.bottom2 .box1,.bottom2 .box3{
+				float: left;
+			}
+			.bottom2 .box2,.bottom2 .box4{
+				float: left;
+				padding-left: 4px;
+			}
+			
+			
+			
+			
+			
+			/*设置底部*/
+			
+			.footer{
+				height: 102px;
+				position: relative;
+				font: 11px Tahoma, Geneva, sans-serif;
+				color: #d6e8f5;
+			}
+			.footer-logo{
+				position: absolute;
+				left: 11px;
+				top: 30px;
+				border: none;
+				}
+			.footer a ,.footer p{
+				font: 11px Tahoma, sans-serif;
+				color: #d6e8f5;
+			}
+			.footer p,.footer-a1{
+				text-align: justify;
+				padding-top:32px ;
+			}
+			.footer-a2,.footer p{
+				/*float:right;*/
+				padding-left: 594px;
+				/*text-align: right;*/
+			}
+			

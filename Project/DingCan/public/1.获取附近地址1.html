@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KEEP MOVING</title>
+</head>
+<body ng-app="mapApp" ng-controller="MapController">
+
+<script type="text/javascript" src="assets/js/angular.js"></script>
+<script type="text/javascript">
+    angular.module('mapApp', [])
+            .controller('MapController', function($scope, $http){
+                //获取附近地址数组
+                //固定的数据--河南工业大学
+                var url = 'http://api.map.baidu.com/place/v2/search?q='
+                        +'河南工业大学'+'&region=郑州&output=json&ak=ta67M7R4GGToWMiWGfG5PajOXzQMwBik' +
+                        '&callback=JSON_CALLBACK';
+                $http.jsonp(url)
+                        .success(function (data) {
+                            //Object {status: 0, message: "ok", results: Array[10]}
+                            console.log('后台返回数据为：',data);
+                            var aroundAddrs = []; //最多出现10组信息
+                            data.results.forEach(function (item) {
+                                aroundAddrs.push(item);
+                            });
+                            $scope.aroundAddrs = aroundAddrs;
+                            console.log('河南工业大学附近地址的数组：',$scope.aroundAddrs);
+                        })
+                        .error(function (data) {
+                            alert(data);
+                        });
+            });
+</script>
+</body>
+</html>

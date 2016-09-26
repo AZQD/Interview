@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>登录</title>
+    <meta content="telephone=no" name="format-detection">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="on" http-equiv="cleartype">
+    <!--build:css inline  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/1reset.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/2layout.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/common.css"/>
+    <!-- /build -->
+    <style>
+        .lg_header {
+            width: 100%;
+            background: #000;
+            text-align: center;
+            height: 2.81rem;
+            line-height: 2.81rem;
+            font-size: 1.06rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .lg_form {
+            width: 100%;
+            /*height: 3.5rem;*/
+            line-height: 3.5rem;
+            background: #fff;
+            font-size: 1rem;
+            color: #000;
+            vertical-align: middle;
+            padding: 0 4%;
+        }
+
+        .lg_form input {
+            height: 2.5rem;
+            border: none;
+            width: 40%;
+        }
+
+        .lg_form button {
+            width: 6rem;
+            height: 2rem;
+
+            border: 1px solid #000;
+            font-size: 0.75rem;
+            background: none;
+        }
+
+        .lg_form1 {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .lg_form1 input {
+            margin-left: 1rem;
+        }
+
+        .lg_form2 input {
+            margin-left: 1rem;
+        }
+
+        .lp_loginBtn {
+            width: 92%;
+            height: 2.75rem;
+            background-color: #ff2a2a;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #fff;
+            margin: 0 auto;
+            display: block;
+            border: none;
+            margin-top: 1rem;
+        }
+
+        .code_disable {
+            border: #282828 2px solid
+        }
+
+        .code_enable {
+            border: #ccc 2px solid
+        }
+        .errorMsg{
+            color: red;
+            padding-left: 126px;
+        }
+        .lp_loginBtn:disabled{
+            background: #dddddd;
+        }
+    </style>
+</head>
+
+<body ng-app="loginApp" ng-controller="LoginController">
+<header class="lg_header">登录</header>
+<form name="loginForm">
+    <div class="lg_form lg_form1">
+        <span class="lg_tel">手机号</span>
+        <input type="text" class="lg_phone" placeholder="请输入您的手机号"
+               autocomplete="off" name="phone" ng-model="user.phone"
+               ng-required="true"
+               ng-pattern="/^\d{11}$/"/>
+    </div>
+    <div class="lg_form lg_form1" ng-messages="loginForm.phone.$error"
+            ng-show="loginForm.phone.$dirty && loginForm.phone.$invalid" ng-class="'errorMsg'">
+        <span ng-message="required" ng-bind="'亲，手机号是必须的'"></span>
+        <span ng-message="pattern" ng-bind="'亲，手机号必须是11位数字'"></span>
+    </div>
+
+    <div class="lg_form lg_form2">
+        <span class="fl">验证码</span>
+        <input type="text" class="lg_checkCode" placeholder="请输入短信验证码"
+               autocomplete="off" name="code" ng-model="user.code"
+                ng-required="true"
+                ng-pattern="/^\d{6}$/"
+                ng-disabled="!isTiming"/>
+        <button class="lg_btn btn" ng-bind="btnText" ng-disabled="isTiming" ng-click="getCode()"></button>
+    </div>
+    <div class="lg_form lg_form2" ng-messages="loginForm.code.$error"
+            ng-show="loginForm.code.$dirty && loginForm.code.$invalid">
+        <span ng-message="required" ng-bind="'亲，验证码是必须的'"></span>
+        <span ng-message="pattern" ng-bind="'亲，验证码必须是六位'"></span>
+    </div>
+
+    <button class="lp_loginBtn btn" ng-disabled="loginForm.$invalid" ng-bind="'登录'" ng-click="submit()"></button>
+</form>
+    <script type="text/javascript" src="assets/js/angular.js"></script>
+    <script type="text/javascript" src="assets/js/angular-messages.js"></script>
+    <script type="text/javascript">
+        angular.module('loginApp', ['ngMessages'])
+            .controller('LoginController', function($scope, $interval, $http){
+                $scope.isTiming = false;
+                $scope.btnText = '获取验证码';
+                $scope.getCode = function(){
+                    //判断手机号输入是否合法， 如果不合法不计时
+                    if($scope.loginForm.phone.$invalid){
+                        //表示手机号不合法，相当于之前填过内容，并不代表确实填过内容
+                        $scope.loginForm.phone.$dirty = true;
+                        return;
+                    }
+
+                    $scope.isTiming = true;
+
+                    var time = 60;
+                    //time = 10; //测试版
+                    $scope.btnText =time + 's后重新获取';
+                    var stop = $interval(function(){
+                        time--;
+                        if(time == 0){
+                            $scope.isTiming = false;
+                            $scope.btnText = '获取验证码';
+                            $interval.cancel(stop);
+                        }else{
+                            $scope.btnText = time + '后重新获取';
+                        }
+
+                    }, 1000);
+
+                    //请求：/sendcode?phone=xxxxx
+                    $http.get('/sendcode?phone='+$scope.user.phone)
+                            .success(function(result){
+                                console.log('****login****',result);
+                            })
+                            .error(function(result){
+                                alert(result);
+                            });
+
+
+                };
+                //这个用于跨域请求
+                /*$scope.submit = function(){
+                    $http({
+                        method : 'POST',
+                        url : 'http://localhost:5000/login',
+                        //客户端向服务器发送的数据
+                        data : 'phone='+$scope.user.phone+'&code='+$scope.user.code,
+                        headers : {
+                            'Content-Type' : 'application/x-www-form-urlencoded'
+                        }
+                    })*/
+                //这个用于访问本机的服务器
+                $scope.submit = function(){
+                    $http({
+                        method : 'POST',
+                        url : '/login',
+                        //客户端向服务器发送的数据
+                        data : $scope.user
+                    })
+                    //result服务器向客户端发送的数据
+                    .success(function(result){
+                        if(result.code === 0){
+                            //console.log(result);
+                            //console.log(typeof  result);
+                            var user = result.data;
+                            //console.log(user);
+                            //console.log(typeof user);
+                            //alert(JSON.stringify(user));
+                            //console.log(typeof JSON.stringify(user));
+                            window.localStorage.setItem('_user_', JSON.stringify(user));
+                            window.location = 'index.html';
+                        }else{
+                            alert(result.data); //提示信息
+                        }
+                    })
+                    .error(function(data){
+                        alert(data);
+                    });
+                };
+            });
+    </script>
+</body>
+</html>

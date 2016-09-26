@@ -1,0 +1,158 @@
+*{margin: 0;padding: 0;}
+		
+			body{
+				 height: auto;
+				/*background-color: #bfa;*/
+				font: 12px Helvetica;
+			}
+			
+			ul{
+				list-style: none;
+				overflow: hidden;
+			}
+			li{
+				float: right;
+				height: 24px;
+				margin: 25px 0 0 19px;
+			}
+			
+			.head-a{
+				line-height: 24px;
+				font: 13px Helvetica;
+				color: #333;
+				position: relative;
+			}
+			.head-aa{
+				padding: 5px 5px 7px 6px;
+				margin:0  11px 0  4px ;
+				background-color: #3388ff;
+				color: #fff;
+				text-decoration: none;
+			}
+			.head-b{
+				font:bold 13px Helvetica;
+			}
+			li a:hover{
+				color: #0000D5;
+			}
+			li a .more:hover{
+				color: #333333;
+			}
+			.head-pic{
+				position: absolute;
+				left: 579px;
+				top: 112px;
+			}
+			
+			#input1{
+				width: 540px;
+				height: 32px;
+				position: absolute;
+				left: 361px;
+				top: 218px;
+				line-height: 32px;
+			}
+			button{
+				display: block;
+				width: 100px;
+				height: 36px;
+				background-color: #3385ff;
+				position: absolute;
+				left: 903px;
+				top: 218px;
+				border: 0;
+				cursor: pointer;
+				
+			}
+			span{
+				font:14px Helvetica;
+				line-height: 36px;
+				color: #fff;
+			}
+			
+			#footer{
+				width: 638px;
+				height: 121px;
+				/*background-color: #bfa;*/
+				position: absolute;
+				left: 364px;
+				top: 547px;
+				overflow: hidden;
+			}
+			
+			#footer .box1{
+				width: 122px;
+				height: 60px;
+				background: url(../img/二维码01.png)  no-repeat;
+				float: left;
+			}
+			#footer .footer-p1{
+				padding: 8px 0 0 70px;
+			}
+			#footer .footer-h1{
+				font: bold 12px Helvetica;
+				padding: 10px 0 0 70px;
+			}
+			
+			#footer .box2{
+				width: 122px;
+				height: 60px;
+				background: url(../img/二维码02.png)  no-repeat;
+				float: left;
+				margin-left: 33px;
+			}
+			
+			#footer .box3{
+				width: 328px;
+				float: left;
+				margin-left: 33px;
+				color: #999;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			#footer .box3 a{
+				color: #999;
+			}
+			
+			#footer .box3 a:hover{
+				color: #767474;
+			}
+			
+			#footer .footer-a1{
+				float: left;
+			}
+			#footer .footer-a2{
+				float: left;
+				padding-left: 62px;
+			}
+			#footer .footer-a3{
+				float: right;
+			}
+			
+			.box3 .a-first{
+				padding-bottom: 7px;
+			}
+			
+			.box3 .p1{
+				float: left;
+			}
+			.box3 .p2{
+				float: right;
+				margin-right: 18px;
+				_margin-right: 7px;
+			}
+			.box3 .p3{
+				padding: 9px 0 0 20px;
+				
+			}
+			.box3 #box3-img1{
+				position: absolute;
+				left: 314px;
+				top: 20px;
+			}
+			.box3 #box3-img2{
+				position: absolute;
+				left: 0px;
+				top: 45px;
+			}

@@ -1,0 +1,127 @@
+/*css reset*/
+*{margin: 0; padding: 0; list-style: none;}
+
+/*css global*/
+
+/*CSS GLOBAL 全局*/
+/*为什么是3.75倍？因为这次做的项目参考的设计图是依据375X667设计的，
+如果是其他项目，先看参照的设计图*/
+@media screen and (min-width: 320px){
+    html{font-size: 85.333333px;}
+}
+@media screen and (min-width: 360px){
+    html{font-size: 96px;}
+}
+@media screen and (min-width: 375px){
+    html{font-size: 100px;}
+}
+@media screen and (min-width: 400px){
+    html{font-size: 106.666667px;}
+}
+@media screen and (min-width: 440px){
+    html{font-size: 117.333333px;}
+}
+@media screen and (min-width: 480px){
+    html{font-size: 128px;}
+}
+@media screen and (min-width: 640px){
+    html{font-size: 170.666667px;}
+}
+html{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);-webkit-font-size: calc(26.66666667vw);-moz-font-size: calc(26.66666667vw);font-size: calc(26.66666667vw);}
+body{min-height:100%;font-size: 0.16rem;color:#969696;/*background:#f5f5f5;*/}
+a{text-decoration:none;color:#000;}
+h3{font-weight:normal;}
+
+/*第一步：使用font-face声明字体*/
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+/*第二步：定义使用iconfont的样式*/
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*css model*/
+/*img{width:100%;}*/
+img{width:3.75rem;}
+
+#header{position: relative;}
+#header .cha img{width: 0.2rem; position: absolute; right: 0.16rem; top: 0.16rem;}
+
+/*search*/
+#search{padding: 0.1rem 0 0.18rem 0;text-indent: 0.42rem; background: url("../images/form.png") no-repeat center;}
+#search a{color: #9f9f9f;}
+
+/*nav*/
+#slide{height: 1.875rem;position: relative;}
+#slide .img li{position: absolute; left: 0; top: 0;}
+#slide .point{position: absolute;bottom: 0.1rem; left: 1.5rem;}
+#slide .point li{float: left;border: 5px solid rgba(255,255,255,0.8); border-radius: 5px; margin-right: 10px;}
+#slide .point .now{border-color: red}
+
+/*recommend*/
+#recommend{height: 3.36rem;}
+#recommend li{float: left; margin-top: 0.03rem;}
+#recommend .middle{margin: 0.03rem 0.04rem 0 0.04rem;}
+#recommend li a img{width: 1.22rem;border: none;}
+
+/*banner1*/
+#banner1{margin-bottom: 0.03rem;}
+
+/*shop*/
+#shop{overflow: hidden;}
+#shop li{clear: both; margin-bottom: 0.02rem;border-bottom:1px solid #f2f2f2;}
+#shop li div{float: left; margin: 0.12rem 0;}
+#shop li .picture a img{width: 1.32rem;}
+#shop li .content{width: 2.43rem;}
+#shop li .content h3{font-weight: normal;color: #080808;}
+#shop li .content p{padding: 0.05rem 0; font-size: 0.14rem;}
+#shop li .content span{color: #ff7040; font: 0.14rem Arial;}
+
+/*banner2*/
+#banner2{background: #f5f5f5; margin: 0.1rem 0 ;}
+
+/*footer*/
+/*<!--第一种方法：用iconfont实现：但是iconfont在移动端不建议使用-->*/
+/*#outerFooter{position: fixed; bottom: 0;width: 100%; background: #fff;}
+#footer li{float: left; width: 25%;text-align: center;}
+#footer li a{color: rgb(172,172,172);}
+#footer li a:hover{color: #f56500;}
+#footer li a .iconfont{font-size: 0.30rem;}*/
+
+/*<!--第二种方法：用css sprite实现：推荐使用-->*/
+#footer{position: fixed; bottom: 0; background: #fff; width: 100%;}
+#footer li{font-size: 0.12rem; float: left; width: 25%; text-align: center;  padding: 0.16rem 0;}
+#footer li div{width: 0.2rem; height: 0.2rem; margin: 0.02rem auto;}
+
+#footer .shop div{background: url("../images/sprite.png") no-repeat 0 -1.4rem; background-size: 100%;}
+#footer .shop div:hover{background: url("../images/sprite.png") no-repeat 0 -1.2rem; background-size: 100%;}
+#footer .shop div:hover +a{color: red;}
+#footer .sort div{background: url("../images/sprite.png") no-repeat 0 -0.2rem; background-size:100%;}
+#footer .sort div:hover{background: url("../images/sprite.png") no-repeat 0 0; background-size:100%;}
+#footer .sort div:hover +a{color: red;}
+#footer .cart div{background: url("../images/sprite.png") no-repeat 0 -0.6rem; background-size:100%;}
+#footer .cart div:hover{background: url("../images/sprite.png") no-repeat 0 -0.4rem; background-size:100%;}
+#footer .cart div:hover +a{color: red;}
+#footer .server div{background: url("../images/sprite.png") no-repeat 0 -1rem; background-size:100%;}
+#footer .server div:hover{background: url("../images/sprite.png") no-repeat 0 -0.8rem; background-size:100%;}
+#footer .server div:hover +a{color: red;}
+
+
+
+
+
+
+
+
+
+

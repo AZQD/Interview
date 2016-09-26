@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KEEP MOVING</title>
+    <style type="text/css">
+        #cc_map {
+            width: 100%;
+            height: 15.19rem;
+            background: #fff;
+            overflow: hidden;
+        }
+        .cc_icon {
+            width: 1.83rem;   /*2.69rem*/
+            height: 3rem;  /*3.625rem*/
+            position: absolute;
+            /*top: 24%;*/
+            left: 50%;
+            margin-left: -1.23rem;
+        }
+        .cc_icon img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body ng-app="mapApp" ng-controller="MapController">
+
+
+<div id="cc_map"></div>
+<div class="cc_icon">
+    <img src="assets/images/position_icon2.png" />
+</div>
+
+
+
+<div class="cc_main_map">
+
+    <div>
+        <input type="text" ng-model="searchText">
+        <button ng-click="search()">搜索</button>
+    </div>
+
+    <div class="cc_map" id="cc_map">
+        <!--<img src="assets/images/map.png" style="width:100%;height:100%;">-->
+    </div>
+    <div class="cc_icon">
+        <img src="assets/images/position_icon2.png" />
+    </div>
+</div>
+
+
+<script type="text/javascript" src="assets/js/angular.js"></script>
+<script type="text/javascript"
+        src="http://api.map.baidu.com/api?v=2.0&ak=ta67M7R4GGToWMiWGfG5PajOXzQMwBik"></script>
+<script type="text/javascript">
+    angular.module('mapApp', [])
+            .controller('MapController', function($scope, $http){
+
+                var map = new BMap.Map("cc_map");//创建地图对象, 指定显示地图的标签id
+                var point = new BMap.Point(116.331398,39.897445);//设置中心点坐标对象
+                map.centerAndZoom(point, 11); // 初始化地图,设置中心点坐标和地图级别
+                map.addControl(new BMap.MapTypeControl()); //添加地图类型控件, 可显示：地图，卫星，三维
+                //map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+                map.addEventListener('moveend', showList);//监视移动完成
+                map.addEventListener('zoomend', showList);//监视缩放完成
+
+
+
+                function showList() {
+                    var point = map.getCenter();
+
+                    var url = 'http://api.map.baidu.com/geocoder/v2/?location='
+                            + point.lat+","+point.lng+"&output=json&pois=1"
+                            + "&callback=JSON_CALLBACK&ak=ta67M7R4GGToWMiWGfG5PajOXzQMwBik";
+
+                    $http.jsonp(url)
+                            .success(function (data) {
+                                //$scope.searchAddressArr = [];
+                                console.log('输出的数据data是：',data);
+                                /*var pois = data.result.pois;
+                                for (var i = 0; i < pois.length; i++) {
+                                    var poi = pois[i];
+                                    $scope.searchAddressArr.push({
+                                        address : poi.name,
+                                        lng : poi.point.x,
+                                        lat : poi.point.y,
+                                        cityId : data.result.cityCode
+                                    });
+                                }*/
+                            })
+                            .error(function (result) {
+                                alert(result);
+                            });
+                }
+
+                /*$scope.toNewAddr = function (index) {
+                    var sessionAddrJson = sessionStorage.getItem('_session_address_');
+                    var address = $scope.searchAddressArr[index];
+                    if(sessionAddrJson!=null) {
+                        sessionStorage.setItem('_search_address_', JSON.stringify(address));
+                        window.location = 'addNewAddr.html';
+                    } else {
+                        address.name = address.address;
+                        delete address.address;
+                        sessionStorage.setItem('_location_address_', JSON.stringify(address));
+                        window.location = 'index.html';
+                    }
+                }*/
+
+                // 创建地址解析器实例
+                /*var myGeo = new BMap.Geocoder();
+                $scope.search = function () {
+                    myGeo.getPoint($scope.searchText, function(p){
+                        if (p) {
+                            point = p;
+                            map.centerAndZoom(point, 15);
+                            showList();
+                        }else{
+                            alert("您指定的地址没有解析到结果!");
+                        }
+                    }, "北京市");
+                }*/
+            });
+</script>
+</body>
+</html>

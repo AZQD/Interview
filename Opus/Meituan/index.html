@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--手机全屏显示-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--作者信息-->
+    <meta name="author" content="www.meituan.com">
+    <!-- 苹果手机是否全屏显示页面-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--控制苹果手机状态栏的颜色-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--数字不能当作电话号码使用-->
+    <meta name="format-detection" content="telephone=no">
+    <!--防止浏览器缓存数据:浏览器缓存：实时刷新-->
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--关键字-->
+    <meta name="keywords" content="美团，团购" />
+    <!--描述-->
+    <meta name="description" content="美团网，和你一起共享优惠！" />
+    <!--网站LOGO-->
+    <link href="img/logo.png" rel="shortcut icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>美团网</title>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<div class="wrapper">
+
+    <header>
+        <div class="header-cell header-left"><a href="javascript:;" id="beiJing">北京</a></div>
+        <form class="header-cell" action="#" method="post">
+            <input type="text" placeholder="输入商家/品类/商圈">
+        </form>
+        <div class="header-cell myself">
+            <a href="javascript:;">
+                <p>⍥</p>
+                <p>我的</p>
+            </a>
+        </div>
+    </header>
+    <div class="download" id="box1">
+        <a href="javascript:;">
+        <img class="img1" src="img/download.jpg" alt="">
+        </a>
+        <img class="img2" id="btn" src="img/cancle.png" alt="">
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a href="javascript:;">
+                <p id="nav-li01">吃</p>
+                <span>美食</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <p id="nav-li02">看</p>
+                    <span>电影</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <p id="nav-li03">住</p>
+                    <span>酒店</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <p id="nav-li04">唱</p>
+                    <span>KTV</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <p id="nav-li05">外</p>
+                    <span>周边游</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <p id="nav-li06">乐</p>
+                    <span>休闲娱乐</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <p id="nav-li07">点</p>
+                    <span>外卖</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <p id="nav-li08">新</p>
+                    <span>今日新单</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!--<a href="javascript:;">喜欢你</a>-->
+    <ul class="sort_left">
+        <a href="javascript:;">
+            <li>
+                <h3>我们约吧</h3>
+                <p>恋人家人好朋友</p>
+                <img src="img/love.png" alt="">
+            </li>
+        </a>
+        <li>
+            <ul class="sort_right">
+                <a href="javascript:;">
+                    <li>
+                        <ul class="lowPrice">
+                            <li>
+                                <h3>低价超值</h3>
+                                <p>十元惠生活</p>
+                            </li>
+                            <li>
+                                <img src="img/hamburger.jpg" alt="">
+                            </li>
+                        </ul>
+                    </li>
+                </a>
+                <li>
+                    <ul class="famous_shop">
+                        <a href="javascript:;">
+                            <li>
+                                <h3>聚餐宴请</h3>
+                                <p>朋友家人经常聚餐</p>
+                                <img src="img/crab.png" alt="">
+                            </li>
+                        </a>
+                        <li>
+                            <a href="javascript:;">
+                                <h3>名店抢购</h3>
+                                <p>距离结束</p>
+                                <p>
+                                    <span id="hour"></span> :
+                                    <span id="minute"></span> :
+                                    <span id="second"></span>
+                                </p>
+                             </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="goods_list">
+        <li><h2>猜你喜欢</h2></li>
+        <li class="good">
+            <a href="javascript:;">
+                <div class="good_cell good_left">
+                    <img src="img/good1.jpg" alt="">
+                </div>
+                <div class="good_cell good_center">
+                    <p class="p1">汉丽轩烤肉超市</p>
+                    <p class="p2">[回龙观]午餐晚餐二选一，免费WiFi</p>
+                    <p class="p3"><span>48元&nbsp;</span><span>&nbsp;新用户立减20元&nbsp;</span></p>
+                </div>
+                <div class="good_cell good_right">
+                    <p>已售出28965份</p>
+                </div>
+            </a>
+        </li>
+        <li class="good">
+            <a href="javascript:;">
+                <div class="good_cell good_left">
+                    <img src="img/good2.jpg" alt="">
+                </div>
+                <div class="good_cell good_center">
+                    <p class="p1">汉丽轩烤肉超市</p>
+                    <p class="p2">[回龙观]午餐晚餐二选一，免费WiFi</p>
+                    <p class="p3"><span>48元&nbsp;</span><span>&nbsp;新用户立减20元&nbsp;</span></p>
+                </div>
+                <div class="good_cell good_right">
+                    <p>已售出28965份</p>
+                </div>
+            </a>
+        </li>
+        <li class="good">
+            <a href="javascript:;">
+                <div class="good_cell good_left">
+                    <img src="img/good3.jpg" alt="">
+                </div>
+                <div class="good_cell good_center">
+                    <p class="p1">汉丽轩烤肉超市</p>
+                    <p class="p2">[回龙观]午餐晚餐二选一，免费WiFi</p>
+                    <p class="p3"><span>48元&nbsp;</span><span>&nbsp;新用户立减20元&nbsp;</span></p>
+                </div>
+                <div class="good_cell good_right">
+                    <p>已售出28965份</p>
+                </div>
+            </a>
+        </li>
+        <li class="good">
+            <a href="javascript:;">
+                <div class="good_cell good_left">
+                    <img src="img/good1.jpg" alt="">
+                </div>
+                <div class="good_cell good_center">
+                    <p class="p1">汉丽轩烤肉超市</p>
+                    <p class="p2">[回龙观]午餐晚餐二选一，免费WiFi</p>
+                    <p class="p3"><span>48元&nbsp;</span><span>&nbsp;新用户立减20元&nbsp;</span></p>
+                </div>
+                <div class="good_cell good_right">
+                    <p>已售出28965份</p>
+                </div>
+            </a>
+        </li>
+        <li class="good">
+            <a href="javascript:;">
+                <div class="good_cell good_left">
+                    <img src="img/good2.jpg" alt="">
+                </div>
+                <div class="good_cell good_center">
+                    <p class="p1">汉丽轩烤肉超市</p>
+                    <p class="p2">[回龙观]午餐晚餐二选一，免费WiFi</p>
+                    <p class="p3"><span>48元&nbsp;</span><span>&nbsp;新用户立减20元&nbsp;</span></p>
+                </div>
+                <div class="good_cell good_right">
+                    <p>已售出28965份</p>
+                </div>
+            </a>
+        </li>
+        <li class="good">
+            <a href="javascript:;">
+                <div class="good_cell good_left">
+                    <img src="img/good3.jpg" alt="">
+                </div>
+                <div class="good_cell good_center">
+                    <p class="p1">汉丽轩烤肉超市</p>
+                    <p class="p2">[回龙观]午餐晚餐二选一，免费WiFi</p>
+                    <p class="p3"><span>48元&nbsp;</span><span>&nbsp;新用户立减20元&nbsp;</span></p>
+                </div>
+                <div class="good_cell good_right">
+                    <p>已售出28965份</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <h2>查看全部团购</h2>
+            </a>
+        </li>
+    </ul>
+    <footer>
+        <div class="info">
+            <p id="ft_p1"><a href="javascript:;"><span>登录</span></a>&nbsp;&nbsp;&nbsp;<a href="javascript:;"><span>注册</span></a></p>
+            <p id="ft_p2">城市：<a href="javascript:;"><span>&nbsp;&nbsp;&nbsp;&nbsp;北京&nbsp;&nbsp;&nbsp;&nbsp;</span></a></p>
+        </div>
+        <p id="ft_p3">
+            <a href="javascript:;">首页</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="javascript:;">订单</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="javascript:;">客户端</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="javascript:;">电脑端</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="javascript:;">帮助</a>
+        </p>
+        <p id="ft_p4">友情链接：<a href="javascript:;">猫眼电影</a></p>
+        <p id="ft_p5"><span>&nbsp;&nbsp;&copy;2016  美团网 京ICP证070791号&nbsp;&nbsp;</span></p>
+    </footer>
+</div>
+</body>
+</html>
