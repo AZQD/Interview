@@ -16,8 +16,8 @@ header{
     background-color: #06C1AE;
     opacity: 0.8;
     z-index: 999;
-	/*position: fixed;*/
-	left：-100px；
+	  /*position: fixed;*/
+	  left: -100px;
 }
 .header-cell{
     display: table-cell;
